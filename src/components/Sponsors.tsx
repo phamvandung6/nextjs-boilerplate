@@ -65,16 +65,6 @@ export const Sponsors = () => (
             />
           </a>
         </td>
-        <td className="border-2 border-gray-300 p-3">
-          <a href="https://l.crowdin.com/next-js" target="_blank" rel="noopener">
-            <Image
-              src="/assets/images/crowdin-dark.png"
-              alt="Crowdin"
-              width={260}
-              height={224}
-            />
-          </a>
-        </td>
       </tr>
       <tr className="h-56">
         <td className="border-2 border-gray-300 p-3">

@@ -55,15 +55,6 @@ Clone this project and use it to create your own Next.js project. You can check 
         </picture>
       </a>
     </td>
-    <td align="center" width="33%">
-      <a href="https://l.crowdin.com/next-js">
-        <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="public/assets/images/crowdin-white.png?raw=true">
-          <source media="(prefers-color-scheme: light)" srcset="public/assets/images/crowdin-dark.png?raw=true">
-          <img alt="Crowdin" src="public/assets/images/crowdin-dark.png?raw=true">
-        </picture>
-      </a>
-    </td>
   </tr>
   <tr height="187px">
     <td align="center" width="33%">
@@ -115,7 +106,7 @@ Developer experience first, trimmed for a personal SEO-friendly starter:
 - ⚡ [Next.js](https://nextjs.org) App Router + React 19
 - 🔥 [TypeScript](https://www.typescriptlang.org) with strict settings
 - 💎 [Tailwind CSS](https://tailwindcss.com) 4 + PostCSS
-- 🌐 i18n with `next-intl` (Crowdin-ready)
+- 🌐 i18n with `next-intl`
 - ♻️ Type-safe env with T3 Env
 - 🔴 Validation with Zod
 - 📏 ESLint (Next + Tailwind + Antfu) & Prettier
@@ -175,14 +166,6 @@ npm run dev
 Open http://localhost:3000 with your favorite browser to see your project. For your information, the project is already pre-configured with a database.
 
 This starter ships without bundled auth or database. Point your API calls to your own backend and add any auth library you prefer. Optional services kept: Sentry, Arcjet, LogTape/Better Stack. Remove their keys from `.env` if unused.
-
-### Translation (i18n) setup
-
-For translation, the project uses `next-intl` combined with [Crowdin](https://l.crowdin.com/next-js). As a developer, you only need to take care of the English (or another default language) version. Translations for other languages are automatically generated and handled by Crowdin. You can use Crowdin to collaborate with your translation team or translate the messages yourself with the help of machine translation.
-
-To set up translation (i18n), create an account at [Crowdin.com](https://l.crowdin.com/next-js) and create a new project. In the newly created project, you will be able to find the project ID. You will also need to create a new Personal Access Token by going to Account Settings > API. Then, in your GitHub Actions, you need to define the following environment variables: `CROWDIN_PROJECT_ID` and `CROWDIN_PERSONAL_TOKEN`.
-
-After defining the environment variables in your GitHub Actions, your localization files will be synchronized with Crowdin every time you push a new commit to the `main` branch.
 
 ### Project structure
 
@@ -401,15 +384,6 @@ See [LICENSE](LICENSE) for more information.
           <source media="(prefers-color-scheme: dark)" srcset="public/assets/images/sevalla-dark.png">
           <source media="(prefers-color-scheme: light)" srcset="public/assets/images/sevalla-light.png">
           <img alt="Sevalla" src="public/assets/images/sevalla-light.png">
-        </picture>
-      </a>
-    </td>
-    <td align="center" width="33%">
-      <a href="https://l.crowdin.com/next-js">
-        <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="public/assets/images/crowdin-white.png?raw=true">
-          <source media="(prefers-color-scheme: light)" srcset="public/assets/images/crowdin-dark.png?raw=true">
-          <img alt="Crowdin" src="public/assets/images/crowdin-dark.png?raw=true">
         </picture>
       </a>
     </td>

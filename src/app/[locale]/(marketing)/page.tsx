@@ -57,16 +57,7 @@ export default async function Index(props: IIndexProps) {
         <li>🚀 Next.js with App Router support</li>
         <li>🔥 TypeScript for type checking</li>
         <li>💎 Tailwind CSS integration</li>
-        <li>
-          🌐 Multi-language support (i18n) with next-intl and
-          {' '}
-          <a
-            className="font-bold text-blue-700 hover:border-b-2 hover:border-blue-700"
-            href="https://l.crowdin.com/next-js"
-          >
-            Crowdin
-          </a>
-        </li>
+        <li>🌐 Multi-language support (i18n) with next-intl</li>
         <li>🔴 Validation with Zod and env safety (T3 Env)</li>
         <li>📏 Linting and formatting (ESLint, Prettier)</li>
         <li>🦊 Git hooks and commit linting (Husky, Commitlint)</li>
