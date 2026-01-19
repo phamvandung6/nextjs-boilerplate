@@ -1,6 +1,15 @@
 import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Sponsors } from '@/components/Sponsors';
+import { Button } from '@/components/ui/button';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
 
 type IIndexProps = {
   params: Promise<{ locale: string }>;
@@ -102,6 +111,71 @@ export default async function Index(props: IIndexProps) {
       </p>
       <h2 className="mt-5 text-2xl font-bold">{t('sponsors_title')}</h2>
       <Sponsors />
+
+      <h2 className="mt-8 text-2xl font-bold">shadcn/ui Components Demo</h2>
+      <div className="mt-4 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <Card>
+          <CardHeader>
+            <CardTitle>Button Component</CardTitle>
+            <CardDescription>
+              Các variant và size khác nhau của Button component
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="flex flex-wrap gap-2">
+            <Button>Default</Button>
+            <Button variant="secondary">Secondary</Button>
+            <Button variant="destructive">Destructive</Button>
+            <Button variant="outline">Outline</Button>
+            <Button variant="ghost">Ghost</Button>
+            <Button variant="link">Link</Button>
+          </CardContent>
+          <CardFooter className="flex flex-wrap gap-2">
+            <Button size="sm">Small</Button>
+            <Button size="default">Default</Button>
+            <Button size="lg">Large</Button>
+          </CardFooter>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle>Card Component</CardTitle>
+            <CardDescription>
+              Component Card với các phần tử Header, Content và Footer
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <p className="text-sm text-muted-foreground">
+              Đây là một ví dụ về Card component từ shadcn/ui. Bạn có thể sử dụng
+              các component này để xây dựng UI đẹp và nhất quán.
+            </p>
+          </CardContent>
+          <CardFooter>
+            <Button className="w-full">Learn More</Button>
+          </CardFooter>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle>Tích hợp hoàn tất</CardTitle>
+            <CardDescription>
+              shadcn/ui đã được tích hợp thành công vào dự án
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <ul className="list-inside list-disc space-y-1 text-sm">
+              <li>✅ Components đã được cài đặt</li>
+              <li>✅ CSS variables đã được cấu hình</li>
+              <li>✅ Utility function cn() đã sẵn sàng</li>
+              <li>✅ Tailwind CSS v4 đã được tích hợp</li>
+            </ul>
+          </CardContent>
+          <CardFooter>
+            <Button variant="outline" className="w-full">
+              Xem thêm components
+            </Button>
+          </CardFooter>
+        </Card>
+      </div>
     </>
   );
 };
