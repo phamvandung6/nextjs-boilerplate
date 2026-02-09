@@ -1,36 +1,21 @@
 import type { Metadata } from 'next';
-import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Image from 'next/image';
 import Link from 'next/link';
 
-type IPortfolioProps = {
-  params: Promise<{ locale: string }>;
+export const metadata: Metadata = {
+  title: 'Portfolio',
+  description: 'Welcome to my portfolio page!',
 };
 
-export async function generateMetadata(props: IPortfolioProps): Promise<Metadata> {
-  const { locale } = await props.params;
-  const t = await getTranslations({
-    locale,
-    namespace: 'Portfolio',
-  });
-
-  return {
-    title: t('meta_title'),
-    description: t('meta_description'),
-  };
-}
-
-export default async function Portfolio(props: IPortfolioProps) {
-  const { locale } = await props.params;
-  setRequestLocale(locale);
-  const t = await getTranslations({
-    locale,
-    namespace: 'Portfolio',
-  });
-
+export default function Portfolio() {
   return (
     <>
-      <p>{t('presentation')}</p>
+      <p>
+        Welcome to my portfolio page! Here you will find a carefully curated
+        collection of my work and accomplishments. Through this portfolio, I aim
+        to showcase my expertise, creativity, and the value I can bring to your
+        projects.
+      </p>
 
       <div className="grid grid-cols-1 justify-items-start gap-3 md:grid-cols-2 xl:grid-cols-3">
         {Array.from(Array.from({ length: 6 }).keys()).map(elt => (
@@ -39,7 +24,9 @@ export default async function Portfolio(props: IPortfolioProps) {
             key={elt}
             href={`/portfolio/${elt}`}
           >
-            {t('portfolio_name', { name: elt })}
+            Portfolio
+            {' '}
+            {elt}
           </Link>
         ))}
       </div>
@@ -57,4 +44,4 @@ export default async function Portfolio(props: IPortfolioProps) {
       </a>
     </>
   );
-};
+}

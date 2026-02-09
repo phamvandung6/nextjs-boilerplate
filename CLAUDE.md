@@ -36,16 +36,15 @@ This is a Next.js 16 boilerplate with internationalization (i18n), TypeScript, T
 - See `src/features/README.md` for detailed guidelines and examples
 
 ### Routing Structure
-- Uses Next.js App Router with locale-based routing: `app/[locale]/(marketing)/`
-- Route groups like `(marketing)` organize pages without affecting URL structure
-- All pages must be wrapped in locale parameter for i18n
+- Uses Next.js App Router: `app/`
+- Pages are created directly in the app directory
+- No locale-based routing - this is a single-language template
 
-### Internationalization (i18n)
-- Uses `next-intl` for translations
-- Configuration: `src/libs/I18n.ts`, `src/libs/I18nRouting.ts`, `src/libs/I18nNavigation.ts`
-- Supported locales defined in `src/utils/AppConfig.ts` (default: 'en', 'fr')
-- Translation files: `src/locales/[locale].json`
-- Locale prefix mode: 'as-needed' (default locale has no prefix)
+### Single Language
+- This template is configured for English only
+- No internationalization dependencies
+- Simplified routing without locale segments
+- To add i18n later, consider using next-intl or similar libraries
 
 ### Environment Variables
 - Validated using `@t3-oss/env-nextjs` with Zod schemas in `src/libs/Env.ts`
@@ -110,11 +109,6 @@ This is a Next.js 16 boilerplate with internationalization (i18n), TypeScript, T
 
 ## Key Files to Modify
 
-### Adding new locales
-1. Update `src/utils/AppConfig.ts` - add locale to `locales` array
-2. Create `src/locales/[locale].json` with translations
-3. Update `src/libs/I18nRouting.ts` if needed
-
 ### Adding environment variables
 1. Add validation schema to `src/libs/Env.ts`
 2. Add to `runtimeEnv` object in same file
@@ -126,10 +120,10 @@ This is a Next.js 16 boilerplate with internationalization (i18n), TypeScript, T
 - Configuration: `components.json`
 
 ### Creating new pages
-- Add to `src/app/[locale]/` or appropriate route group
-- Must handle locale parameter in Server Components
-- Use `setRequestLocale(locale)` for static pages
-- Import translations via `useTranslations()` from next-intl
+- Add to `src/app/` directory
+- Create `page.tsx` files using Next.js App Router conventions
+- Export metadata for SEO optimization
+- Use Server Components by default, mark with 'use client' only when needed
 
 ## Next.js Features
 
@@ -142,7 +136,6 @@ This is a Next.js 16 boilerplate with internationalization (i18n), TypeScript, T
 ### Plugins
 - Bundle analyzer: triggered with `ANALYZE=true`
 - Sentry: automatic error tracking and performance monitoring
-- next-intl: handles i18n routing and message loading
 
 ## Node Requirements
 
