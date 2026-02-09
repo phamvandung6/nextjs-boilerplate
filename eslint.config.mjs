@@ -27,6 +27,7 @@ export default antfu(
     // Ignored paths
     ignores: [
       'migrations/**/*',
+      'src/features/README.md',
     ],
   },
   // --- Accessibility Rules ---

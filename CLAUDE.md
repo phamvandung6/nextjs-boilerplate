@@ -28,6 +28,13 @@ This is a Next.js 16 boilerplate with internationalization (i18n), TypeScript, T
 
 ## Architecture
 
+### Feature-Based Architecture
+- Project uses feature-based organization in `src/features/`
+- Each feature is self-contained with its own components, hooks, types, and utils
+- Features export public APIs through `index.ts` files
+- Import features using: `import { Component } from '@/features/feature-name'`
+- See `src/features/README.md` for detailed guidelines and examples
+
 ### Routing Structure
 - Uses Next.js App Router with locale-based routing: `app/[locale]/(marketing)/`
 - Route groups like `(marketing)` organize pages without affecting URL structure
@@ -47,9 +54,11 @@ This is a Next.js 16 boilerplate with internationalization (i18n), TypeScript, T
 - Client-side: `NEXT_PUBLIC_APP_URL`, `NEXT_PUBLIC_BETTER_STACK_SOURCE_TOKEN`, etc.
 
 ### Component Organization
-- `src/components/` - Shared React components
+- `src/features/[feature-name]/components/` - Feature-specific components
+- `src/components/` - Shared React components (used across features)
 - `src/components/ui/` - shadcn/ui components (configured via `components.json`)
 - shadcn/ui uses "new-york" style with Tailwind CSS variables
+- Follow feature-based structure: keep related code together in feature folders
 
 ### Path Aliases
 - `@/*` → `src/*`
