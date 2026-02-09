@@ -2,9 +2,7 @@
   "RootLayout": {
     "home_link": "Accueil",
     "about_link": "A propos",
-    "portfolio_link": "Portfolio"
-  },
-  "BaseTemplate": {
+    "portfolio_link": "Portfolio",
     "description": "Code de démarrage pour Next.js avec Tailwind CSS",
     "made_with": "Fait avec <author></author>."
   },

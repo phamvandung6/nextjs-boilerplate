@@ -2,9 +2,7 @@
   "RootLayout": {
     "home_link": "Home",
     "about_link": "About",
-    "portfolio_link": "Portfolio"
-  },
-  "BaseTemplate": {
+    "portfolio_link": "Portfolio",
     "description": "Starter code for your Nextjs Boilerplate with Tailwind CSS",
     "made_with": "Made with <author></author>."
   },
